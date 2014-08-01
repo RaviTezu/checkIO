@@ -2,15 +2,14 @@
 
 def checkio(data):
    """ Takes in a matrix(tuple of lists)
-       and returns Matrix transpose(tuple of lists)"""
-   rows    = len(data)
+       and returns Matrix transpose(list of lists)"""
    columns = len(data[0])
    trans = []
-   for fill in xrange(rows):
-       print fill
+   for fill in xrange(columns):
+       #print fill
        cur = []
        for seq in data:
-           print "seq["+str(fill)+"]"
+           #print "seq["+str(fill)+"]"
            cur.append(seq[fill])
        trans.append(cur)
    return trans       
