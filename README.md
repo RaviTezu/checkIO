@@ -1,4 +1,4 @@
 CheckiO
 =======
 
-Solutions to CheckiO Problems
+Solutions to checkIO Problems
