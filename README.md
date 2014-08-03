@@ -1,4 +1,4 @@
 CheckiO
 =======
 
-Solutions to checkIO Problems
+Solutions to [checkIO](http://www.checkio.org/) Problems - 
