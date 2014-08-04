@@ -2,7 +2,6 @@
 
 def morse(num, mode, num1, num2):
     """ Takes in a number and mode(H,M,S) returns More string """
-    #Foramt: .. ....
     s1 = bin(int(str(num)[0]))[2:]
     s2 = bin(int(str(num)[1]))[2:]
     if len(s1) < num1:
@@ -25,7 +24,7 @@ def checkio(time_string):
         minutes = '0'*(2-len(minutes)) + minutes
     if len(seconds) < 2:
         seconds = '0'(2-len(seconds)) + seconds
-    return morse(hours,"hours") + " : " + morse(minutes,"minutes") + " : " + morse(seconds,"seconds")
+    return morse(hours, "hours", 2, 4) + " : " + morse(minutes, "minutes", 3, 4) + " : " + morse(seconds, "seconds", 3, 4)
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
