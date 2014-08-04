@@ -1,9 +1,17 @@
 #!/usr/bin/python
+
+from __future__ import division
+import math
+
 def checkio(a, b, c):
     """ Takes 3 sides of a triangle and return the 3 angles as a list for valid triangle sides"""
     #checking for valide trangle
     if a + b > c and b + c > a and c + a > b:
-        #Calculate the angeles 
+        #Calculate the angeles Lets say [A, B, C] 
+        C = round(math.degrees(math.acos((a**2 + b**2 - c**2)/(2*a*b))))
+        B = round(math.degrees(math.acos((a**2 + c**2 - b**2)/(2*a*c))))
+        A = 180 - (B + C)
+        return [A, B, C]
     else:
         return [0, 0, 0]
 
