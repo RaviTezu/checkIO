@@ -3,15 +3,31 @@
 def checkio(capacity, number):
     nums = [str(x) for x in range(0,number)]
     str1 = "".join(nums)
-    print nums
+    #print nums
     strs = ["".join(nums[i:i+capacity]) for i in range(0, number, capacity)]
     ret_str = ""
     if number%capacity and capacity < number:
-        pass
+        #print strs
+        bl = strs[-2]
+        for s in strs[:-1]:
+            if s!= bl:
+                ret_str += (s+",")*2
+            else:
+                ret_str = ret_str + bl + "," + bl[len(strs[-1]):] + strs[-1] + ","+ strs[-1] + bl[:len(strs[-1])]
+                #ret_str = ret_str + bl + "," + bl[1:] + strs[-1][0] + "," + strs[-1]+bl[0]
     else:
         for s in strs:
             ret_str += (s+",")*2
-        print ret_str[:-1]
+    fn_str = ret_str.strip(",")
+    #print fn_str
+    for x in fn_str:
+        if fn_str.count(x) == 2 or x==",":
+            pass
+        else:
+           fn_str = fn_str+","+x
+    #print fn_str
+    return fn_str
+    
 
 
 if __name__ == '__main__':
@@ -39,10 +55,12 @@ if __name__ == '__main__':
             print("I see over painted details.")
             return False
         return True
-
-    #assert check_solution(checkio, 2, 4, 3), "1st Example"
-    #assert check_solution(checkio, 3, 6, 2), "2nd Example"
-    assert check_solution(checkio, 6, 6, 4), "3rd Example"
+    
+    assert check_solution(checkio, 2, 3, 3), "1st Example"
+    assert check_solution(checkio, 6, 3, 2), "2nd Example"
+    assert check_solution(checkio, 3, 6, 4), "3rd Example"
     assert check_solution(checkio, 1, 4, 8), "4th Example"
     assert check_solution(checkio, 2, 5, 5), "5th Example"
-
+    checkio(3,4)
+    checkio(4,6)
+       
