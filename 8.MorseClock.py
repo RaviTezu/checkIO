@@ -23,7 +23,7 @@ def checkio(time_string):
     if len(minutes) < 2:
         minutes = '0'*(2-len(minutes)) + minutes
     if len(seconds) < 2:
-        seconds = '0'(2-len(seconds)) + seconds
+        seconds = '0'*(2-len(seconds)) + seconds
     return morse(hours, "hours", 2, 4) + " : " + morse(minutes, "minutes", 3, 4) + " : " + morse(seconds, "seconds", 3, 4)
 
 if __name__ == '__main__':
